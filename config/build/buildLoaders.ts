@@ -14,7 +14,12 @@ export function buildLladers(options: BuildOptions): webpack.RuleSetRule[] {
         test: /\.s[ac]ss$/i,
         use: [
           options.isDev? 'style-loader' : MiniCssExtractPlugin.loader,
-          "css-loader",
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+            }
+          },
           "sass-loader",
         ],
       }
