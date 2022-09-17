@@ -3,29 +3,35 @@ import webpack from 'webpack';
 import { BuildOptions } from './types/config';
 
 export function buildLladers(options: BuildOptions): webpack.RuleSetRule[] {
-    
-    //Если не используем тайскрипт - нужен babel-loader
-    const typescriptLoader = {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-    }
-    const cssLoader = {
-        test: /\.s[ac]ss$/i,
-        use: [
-          options.isDev? 'style-loader' : MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-            }
-          },
-          "sass-loader",
-        ],
-      }
 
-return [
+  //Если не используем тайскрипт - нужен babel-loader
+  const { isDev } = options
+  const typescriptLoader = {
+    test: /\.tsx?$/,
+    use: 'ts-loader',
+    exclude: /node_modules/,
+  }
+  const cssLoader = {
+    test: /\.s[ac]ss$/i,
+    use: [
+      isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+      {
+        loader: 'css-loader',
+        options: {
+          modules: {
+            auto: (resPath: string) => Boolean(resPath.includes('.module.')),
+            localIdentName: isDev
+              ? '[path][name]__[local]--[hash:base64:5]'
+              : '[hash:base64:8]'
+          }
+        }
+      },
+      "sass-loader",
+    ],
+  }
+
+  return [
     typescriptLoader,
     cssLoader,
-]
+  ]
 }
