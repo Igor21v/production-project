@@ -1,7 +1,7 @@
-import { lazy } from "react";
+import { lazy } from 'react';
 
-export const AboutPageAsync = lazy(() => new Promise(resolve => {
+export const AboutPageAsync = lazy(() => new Promise((resolve) => {
     // @ts-ignore
-    //Искуственная задержка загрузки страницы для теста Suspense
-    setTimeout(()=> resolve(import('./AboutPage')),1500)
+    // Искуственная задержка загрузки страницы для теста Suspense
+    setTimeout(() => resolve(import('./AboutPage')), 1500);
 }));
