@@ -1,5 +1,7 @@
 {
   "Main": "Главная",
   "About": "О сайте",
-  "Translate": "English"
+  "Translate": "English",
+  "toggle": "переключатель",
+  "loading": "Загрузка..."
 }

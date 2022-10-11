@@ -1,5 +1,7 @@
 {
   "Main": "Main",
   "About": "About",
-  "Translate": "Русский"
+  "Translate": "Русский",
+  "toggle": "toggle",
+  "loading": "Loading..."
 }
