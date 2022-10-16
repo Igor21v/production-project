@@ -1,4 +1,5 @@
-import React, { ErrorInfo, ReactNode } from 'react';
+import React, { ErrorInfo, ReactNode, Suspense } from 'react';
+import { PageError } from 'widgets/PageError';
 
 interface ErrorBoundaryProps {
     children: ReactNode;
@@ -15,13 +16,14 @@ class ErrorBoundary
         this.state = { hasError: false };
     }
 
-    static getDerivedStateFromError(error: Error) {
+    static getDerivedStateFromError() {
         // Update state so the next render will show the fallback UI.
         return { hasError: true };
     }
 
     componentDidCatch(error: Error, errorInfo: ErrorInfo) {
         // You can also log the error to an error reporting service
+        // eslint-disable-next-line no-console
         console.log(error, errorInfo);
     }
 
@@ -30,7 +32,11 @@ class ErrorBoundary
         const { children } = this.props;
         if (hasError) {
         // You can render any custom fallback UI
-            return <h1>Something went wrong.</h1>;
+            return (
+                <Suspense fallback="">
+                    <PageError />
+                </Suspense>
+            );
         }
 
         return children;

@@ -4,5 +4,7 @@
   "Translate": "English",
   "toggle": "переключатель",
   "loading": "Загрузка...",
-  "page-not-found": "Страница не найдена"
+  "page-not-found": "Страница не найдена",
+  "An unexpected error has occurred": "Произошла непредвиденная ошибка",
+  "Reload page": "Обновить страницу"
 }
