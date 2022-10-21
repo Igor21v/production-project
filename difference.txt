@@ -1,1 +1,1 @@
-1. 24 lession 15:50 add regenerator-runtime to setupTest
+1. 24 lession 15:50 add regenerator-runtime to setupTest.
