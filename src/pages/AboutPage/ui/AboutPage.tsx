@@ -5,7 +5,7 @@ export default function AboutPage() {
     return (
         <div>
             {t('Page about site')}
-            999999
+            88888
         </div>
     );
 }
