@@ -5,7 +5,6 @@ export default function AboutPage() {
     return (
         <div>
             {t('Page about site')}
-            123
         </div>
     );
 }
