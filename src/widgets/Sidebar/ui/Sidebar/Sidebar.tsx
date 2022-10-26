@@ -40,18 +40,19 @@ export const Sidebar = ({ className }: SidebarProps) => {
                 <AppLink
                     theme={AppLinkTheme.SECONDARY}
                     to={RouterPath.main}
-                    className={cls.link}
+                    className={cls.item}
                 >
-                    {t('Main')}
+                    <MainIcon className={cls.icon} />
+                    <span className={cls.link}>{t('Main')}</span>
                 </AppLink>
                 <AppLink
                     theme={AppLinkTheme.SECONDARY}
                     to={RouterPath.about}
-                    className={cls.link}
+                    className={cls.item}
                 >
-                    {t('About')}
-                </AppLink
-                >
+                    <AboutIcon className={cls.icon} />
+                    <span className={cls.link}>{t('About')}</span>
+                </AppLink>
             </div>
 
             <div className={cls.switchers}>
