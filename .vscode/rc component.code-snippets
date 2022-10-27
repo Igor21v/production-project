@@ -15,25 +15,28 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-
 	"Create tsx component": {
 			"scope": "typescriptreact",
 		 	"prefix": "rc",
 		 	"body": [
 				"import { classNames } from 'shared/lib/classNames/classNames';",
-				"import cls from './${1:$TM_FILENAME_BASE}.module.scss'",
+				"import cls from './${1:$TM_FILENAME_BASE}.module.scss';",
 				"",
 				"interface ${1:$TM_FILENAME_BASE}Props {",
 				"    className?: string;",
 				"}",
 				"",
-				"export const ${1:$TM_FILENAME_BASE} = ({className}: ${1:$TM_FILENAME_BASE}Props) => {",
+				"export const ${1:$TM_FILENAME_BASE} = (props: ${1:$TM_FILENAME_BASE}Props) => {",
+				"    const {",
+				"        className,",
+				"    } = props;",
 				"    return (",
-				"        <div className = {classNames(cls.${1:$TM_FILENAME_BASE}, {}, [className])}>",
+				"        <div className={classNames(cls.${1:$TM_FILENAME_BASE}, {}, [className])} >",
 				"            $2",
 				"        </div>",
 				"    );",
 				"};",
+				"",
 			],
 			"description": "react tsx component"
 		}
