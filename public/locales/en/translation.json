@@ -7,5 +7,7 @@
   "An unexpected error has occurred": "An unexpected error has occurred",
   "Reload page": "Reload page",
   "Short translate": "RU",
-  "sign-in": "Sign in"
+  "sign-in": "Sign in",
+  "decrement": "decrement",
+  "increment": "decrement"
 }
