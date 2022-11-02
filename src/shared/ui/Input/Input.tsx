@@ -19,14 +19,19 @@ export const Input = memo((props: InputProps) => {
         ...otherProps
     } = props;
     const [isFocused, setIsFocuset] = useState(false);
+    const [caretPosition, setCaretPosition] = useState(0);
     const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         onChange?.(e.target.value);
+        setCaretPosition(e.target.value.length);
     };
     const onBlur = () => {
         setIsFocuset(false);
     };
     const onFocus = () => {
         setIsFocuset(true);
+    };
+    const onSelect = (e: any) => {
+        setCaretPosition(e?.target?.selectionStart || 0);
     };
     return (
         <div className={classNames(cls.InputWrapper, {}, [className])}>
@@ -44,9 +49,13 @@ export const Input = memo((props: InputProps) => {
                     className={cls.input}
                     onFocus={onFocus}
                     onBlur={onBlur}
+                    onSelect={onSelect}
                 />
                 {isFocused && (
-                    <span className={cls.caret} />
+                    <span
+                        className={cls.caret}
+                        style={{ left: `${caretPosition * 9}px` }}
+                    />
                 )}
             </div>
         </div>

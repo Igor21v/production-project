@@ -9,5 +9,7 @@
   "Short translate": "EN",
   "sign-in": "Войти",
   "decrement": "Декремент",
-  "increment": "Инкремент"
+  "increment": "Инкремент",
+  "Enter user name": "Введите имя пользователя",
+  "Enter password": "Введите пароль"
 }

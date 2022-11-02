@@ -15,8 +15,16 @@ export const LoginForm = (props: LoginFormProps) => {
     const { t } = useTranslation();
     return (
         <div className={classNames(cls.LoginForm, {}, [className])}>
-            <Input type="text" className={cls.input} />
-            <Input type="text" className={cls.input} />
+            <Input
+                type="text"
+                className={cls.input}
+                placeholder={t('Enter user name')}
+            />
+            <Input
+                type="text"
+                className={cls.input}
+                placeholder={t('Enter password')}
+            />
             <Button
                 className={cls.loginBtn}
             >
