@@ -16,12 +16,11 @@ export const LoginForm = (props: LoginFormProps) => {
     return (
         <div className={classNames(cls.LoginForm, {}, [className])}>
             <Input
-                type="text"
+                autoFocus
                 className={cls.input}
                 placeholder={t('Enter user name')}
             />
             <Input
-                type="text"
                 className={cls.input}
                 placeholder={t('Enter password')}
             />

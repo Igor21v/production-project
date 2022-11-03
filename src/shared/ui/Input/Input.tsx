@@ -1,4 +1,6 @@
-import React, { InputHTMLAttributes, memo, useState } from 'react';
+import React, {
+    InputHTMLAttributes, memo, useEffect, useRef, useState,
+} from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
@@ -16,10 +18,20 @@ export const Input = memo((props: InputProps) => {
         type = 'text',
         placeholder,
         onChange,
+        autoFocus,
         ...otherProps
     } = props;
+    const ref = useRef<HTMLInputElement>();
     const [isFocused, setIsFocuset] = useState(false);
     const [caretPosition, setCaretPosition] = useState(0);
+
+    useEffect(() => {
+        if (autoFocus) {
+            setIsFocuset(true);
+            ref.current.focus();
+        }
+    }, [autoFocus]);
+
     const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         onChange?.(e.target.value);
         setCaretPosition(e.target.value.length);
@@ -42,6 +54,7 @@ export const Input = memo((props: InputProps) => {
             )}
             <div className={cls.caretWrapper}>
                 <input
+                    ref={ref}
                     type={type}
                     onChange={onChangeHandler}
                     value={value}
