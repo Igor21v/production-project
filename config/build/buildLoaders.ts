@@ -3,7 +3,6 @@ import { buildCssLoader } from './loaders/buildCssLoader';
 import { BuildOptions } from './types/config';
 
 export function buildLladers({ isDev }: BuildOptions): webpack.RuleSetRule[] {
-    // Если не используем тайскрипт - нужен babel-loader
     const typescriptLoader = {
         test: /\.tsx?$/,
         use: 'ts-loader',

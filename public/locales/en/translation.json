@@ -5,5 +5,11 @@
   "toggle": "toggle",
   "page-not-found": "Page not found",
   "An unexpected error has occurred": "An unexpected error has occurred",
-  "Reload page": "Reload page"
+  "Reload page": "Reload page",
+  "Short translate": "RU",
+  "sign-in": "Sign in",
+  "decrement": "decrement",
+  "increment": "decrement",
+  "Enter user name": "Enter user name",
+  "Enter password": "Enter password"
 }

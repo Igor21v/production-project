@@ -5,5 +5,11 @@
   "toggle": "переключатель",
   "page-not-found": "Страница не найдена",
   "An unexpected error has occurred": "Произошла непредвиденная ошибка",
-  "Reload page": "Обновить страницу"
+  "Reload page": "Обновить страницу",
+  "Short translate": "EN",
+  "sign-in": "Войти",
+  "decrement": "Декремент",
+  "increment": "Инкремент",
+  "Enter user name": "Введите имя пользователя",
+  "Enter password": "Введите пароль"
 }
