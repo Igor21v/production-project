@@ -125,3 +125,16 @@ SquareSizeXL.args = {
     square: true,
     size: ButtonSize.XL,
 };
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+    children: 'Text',
+    disabled: true,
+};
+
+export const DisabledDark = Template.bind({});
+DisabledDark.args = {
+    children: 'Text',
+    disabled: true,
+};
+DisabledDark.decorators = [ThemeDecorator(Theme.DARK)];

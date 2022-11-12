@@ -11,5 +11,8 @@
   "decrement": "decrement",
   "increment": "decrement",
   "Enter user name": "Enter user name",
-  "Enter password": "Enter password"
+  "Enter password": "Enter password",
+  "Authorization form": "Authorization form",
+  "Invalid username or password": "Invalid username or password",
+  "sign-out": "Sign out"
 }
