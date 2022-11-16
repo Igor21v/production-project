@@ -11,11 +11,11 @@ import { getLoginState } from '../../model/selectors/SelectLoginState/SelectLogi
 
 import cls from './LoginForm.module.scss';
 
-interface LoginFormProps {
+export interface LoginFormProps {
     className?: string;
 }
 
-export const LoginForm = memo((props: LoginFormProps) => {
+const LoginForm = memo((props: LoginFormProps) => {
     const {
         className,
     } = props;
@@ -61,3 +61,5 @@ export const LoginForm = memo((props: LoginFormProps) => {
         </div>
     );
 });
+
+export default LoginForm;

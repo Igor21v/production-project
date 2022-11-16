@@ -10,9 +10,11 @@ export function createReduxStore(initialState?: StateSchema) {
         user: userReducer,
         loginForm: loginReducer,
     };
-    return configureStore<StateSchema>({
+
+    const store = configureStore<StateSchema>({
         reducer: rootReducers,
         devTools: __IS_DEV__,
         preloadedState: initialState,
     });
+    return store;
 }
