@@ -10,8 +10,8 @@
   "sign-in": "Войти",
   "decrement": "Декремент",
   "increment": "Инкремент",
-  "Enter user name": "Введите имя пользователя",
-  "Enter password": "Введите пароль",
+  "Enter user name": "Имя пользователя",
+  "Enter password": "Пароль",
   "Authorization form": "Форма авторизации",
   "Invalid username or password": "Введен неверный логин или пароль",
   "sign-out": "Выйти"
