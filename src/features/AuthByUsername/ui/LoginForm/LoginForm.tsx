@@ -6,13 +6,12 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { ReduxStoreWithManager } from 'app/providers/StoreProvider';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { getLoginIsPassword } from 'features/AuthByUsername/model/selectors/getLoginIsPassword/getLoginIsPassword';
+import { getLoginPassword } from 'features/AuthByUsername/model/selectors/getLoginIsPassword/getLoginPassword';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import cls from './LoginForm.module.scss';
-import { getLoginUsername } from '../../model/selectors/getLoginIsUsername/getLoginIsUsername';
-import { getLoginError } from '../../model/selectors/getLoginError/getLoginIsError';
+import { getLoginUsername } from '../../model/selectors/getLoginIsUsername/getLoginUsername';
+import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
 
 export interface LoginFormProps {
@@ -30,7 +29,7 @@ const LoginForm = memo((props: LoginFormProps) => {
     const { t } = useTranslation();
     const dispatch = useDispatch();
     const username = useSelector(getLoginUsername);
-    const password = useSelector(getLoginIsPassword);
+    const password = useSelector(getLoginPassword);
     const isLoading = useSelector(getLoginIsLoading);
     const error = useSelector(getLoginError);
     const onChangeUsername = useCallback((value: string) => {
