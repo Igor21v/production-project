@@ -9,6 +9,7 @@ export default {
 
     globals: {
         __IS_DEV__: true,
+        __API__: '',
     },
     // Automatically clear mock calls, instances and results before every test
     clearMocks: true,
