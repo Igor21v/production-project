@@ -1,7 +1,6 @@
 {
   "Main": "Главная",
   "About": "О сайте",
-  "Profile": "Профиль",
   "Translate": "English",
   "toggle": "переключатель",
   "page-not-found": "Страница не найдена",
@@ -15,5 +14,6 @@
   "Enter password": "Пароль",
   "Authorization form": "Форма авторизации",
   "Invalid username or password": "Введен неверный логин или пароль",
-  "sign-out": "Выйти"
+  "sign-out": "Выйти",
+  "Profile": "Профиль"
 }

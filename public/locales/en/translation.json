@@ -1,7 +1,6 @@
 {
   "Main": "Main",
   "About": "About",
-  "Profile": "Profile",
   "Translate": "Русский",
   "toggle": "toggle",
   "page-not-found": "Page not found",
@@ -15,5 +14,6 @@
   "Enter password": "Enter password",
   "Authorization form": "Authorization form",
   "Invalid username or password": "Invalid username or password",
-  "sign-out": "Sign out"
+  "sign-out": "Sign out",
+  "Profile": "Profile"
 }
