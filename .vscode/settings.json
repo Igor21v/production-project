@@ -6,6 +6,4 @@
     ],
     "i18n-ally.keystyle": "nested",
     "i18n-ally.sourceLanguage": "en",
-    "js/ts.implicitProjectConfig.strictNullChecks": false,
-    "js/ts.implicitProjectConfig.strictFunctionTypes": false,
 }
