@@ -1,4 +1,4 @@
-import { getProfileReadOnly, profileActions } from 'entities/Profile';
+import { getProfileReadOnly, profileActions, updateProfileData } from 'entities/Profile';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -26,7 +26,7 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
         dispatch(profileActions.cancelEdit());
     }, [dispatch]);
     const onSave = useCallback(() => {
-        dispatch(profileActions.cancelEdit());
+        dispatch(updateProfileData());
     }, [dispatch]);
     return (
         <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
