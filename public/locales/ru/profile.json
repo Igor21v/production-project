@@ -3,5 +3,11 @@
   "Edit": "Редактировать",
   "Profile": "Профиль",
   "Your name": "Ваше имя",
-  "Your surname": "Ваша фамилия"
+  "Your surname": "Ваша фамилия",
+  "An error occurred while loading the profile": "Произошла ошибка при загрузке профиля",
+  "Try reload page": "Попробуйте обновить страницу",
+  "Cancel": "Отменить",
+  "Save": "Сохранить",
+  "Your age": "Ваш возраст",
+  "Your city": "Ваш город"
 }

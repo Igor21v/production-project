@@ -3,5 +3,11 @@
   "Edit": "Edit",
   "Profile": "Profile",
   "Your name": "Your name",
-  "Your surname": "Your surname"
+  "Your surname": "Your surname",
+  "An error occurred while loading the profile": "An error occurred while loading the profile",
+  "Try reload page": "Try reload page",
+  "Cancel": "Cancel",
+  "Save": "Save",
+  "Your age": "Your age",
+  "Your city": "Your city"
 }
