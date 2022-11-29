@@ -9,5 +9,8 @@
   "Cancel": "Отменить",
   "Save": "Сохранить",
   "Your age": "Ваш возраст",
-  "Your city": "Ваш город"
+  "Your city": "Ваш город",
+  "Your login": "Ваш логин",
+  "Enter your login": "Введите Ваш логин",
+  "Enter reference to avatar": "Введите ссылку на аватар"
 }

@@ -32,8 +32,8 @@
   ],
   "profile": {
     "first": "Игорь",
-    "lastname": "Бондаренко123",
-    "age": 3212,
+    "lastname": "Бондаренко",
+    "age": "32",
     "currency": "RUB",
     "country": "Russia",
     "city": "Bratsk",

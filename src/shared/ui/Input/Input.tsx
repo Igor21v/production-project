@@ -53,7 +53,7 @@ export const Input = memo((props: InputProps) => {
     };
     const isCaretVisible = isFocused && !readOnly;
     return (
-        <div className={classNames(cls.InputWrapper, mods, [className])}>
+        <div className={classNames(cls.InputWrapper, {}, [className])}>
             {placeholder && (
                 <div className={cls.placeholder}>
                     {`${placeholder}>`}

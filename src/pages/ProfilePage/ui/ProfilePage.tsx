@@ -52,7 +52,12 @@ const ProfilePage = (props: ProfilePageProps) => {
     const onChangeCity = useCallback((value?: string) => {
         dispatch(profileActions.updateProfile({ city: value }));
     }, [dispatch]);
-
+    const onChangeUsername = useCallback((value?: string) => {
+        dispatch(profileActions.updateProfile({ username: value }));
+    }, [dispatch]);
+    const onChangeAvatar = useCallback((value?: string) => {
+        dispatch(profileActions.updateProfile({ avatar: value }));
+    }, [dispatch]);
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <div className={classNames('', {}, [className])}>
@@ -66,6 +71,8 @@ const ProfilePage = (props: ProfilePageProps) => {
                     onChangeLastname={onChangeLastname}
                     onChangeAge={onChangeAge}
                     onChangeCity={onChangeCity}
+                    onChangeAvatar={onChangeAvatar}
+                    onChangeUsername={onChangeUsername}
                 />
             </div>
         </DynamicModuleLoader>
