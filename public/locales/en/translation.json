@@ -15,5 +15,7 @@
   "Authorization form": "Authorization form",
   "Invalid username or password": "Invalid username or password",
   "sign-out": "Sign out",
-  "Profile": "Profile"
+  "Profile": "Profile",
+  "Specify the currency": "Specify the currency",
+  "Specify the country": "Specify the country"
 }

@@ -6,6 +6,8 @@ import { Loader } from 'shared/ui/Loader/Loader';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Select } from 'shared/ui/Select/Select';
 import { Currency } from 'entities/Currency/model/types/currency';
+import { CurrencySelect } from 'entities/Currency';
+import { Country, CountrySelect } from 'entities/Country';
 import cls from './profileCard.module.scss';
 import { Profile } from '../../model/types/profile';
 
@@ -21,6 +23,8 @@ interface ProfileCardProps {
     onChangeCity?: (value?: string) => void;
     onChangeUsername?: (value?: string) => void;
     onChangeAvatar?: (value?: string) => void;
+    onChangeCurrency?: (currency: Currency) => void;
+    onChangeCountry?: (country: Country) => void;
 }
 
 export const ProfileCard = (props: ProfileCardProps) => {
@@ -36,6 +40,8 @@ export const ProfileCard = (props: ProfileCardProps) => {
         onChangeCity,
         onChangeUsername,
         onChangeAvatar,
+        onChangeCurrency,
+        onChangeCountry,
     } = props;
     const { t } = useTranslation('profile');
     if (isLoading) {
@@ -111,13 +117,17 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 onChange={onChangeAvatar}
                 readOnly={readOnly}
             />
-            <Select
-                label="Укажите валюту"
-                options={[
-                    { value: Currency.RUB, content: Currency.RUB },
-                    { value: Currency.EUR, content: Currency.EUR },
-                    { value: Currency.USD, content: Currency.USD },
-                ]}
+            <CurrencySelect
+                className={cls.input}
+                value={data?.currency}
+                onChange={onChangeCurrency}
+                readonly={readOnly}
+            />
+            <CountrySelect
+                className={cls.input}
+                value={data?.country}
+                onChange={onChangeCountry}
+                readonly={readOnly}
             />
         </div>
 

@@ -15,5 +15,7 @@
   "Authorization form": "Форма авторизации",
   "Invalid username or password": "Введен неверный логин или пароль",
   "sign-out": "Выйти",
-  "Profile": "Профиль"
+  "Profile": "Профиль",
+  "Specify the currency": "Укажите валюту",
+  "Specify the country": "Укажите страну"
 }

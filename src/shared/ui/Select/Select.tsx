@@ -14,6 +14,7 @@ interface SelectProps {
     options?: Array<SelectOption>;
     value?: string;
     onChange?: (value: string) => void;
+    readonly?: boolean;
 }
 
 export const Select = memo((props: SelectProps) => {
@@ -23,6 +24,7 @@ export const Select = memo((props: SelectProps) => {
         options,
         value,
         onChange,
+        readonly,
     } = props;
     const { t } = useTranslation();
     const optionsList = useMemo(() => (
@@ -47,6 +49,7 @@ export const Select = memo((props: SelectProps) => {
                 </span>
             )}
             <select
+                disabled={readonly}
                 className={cls.select}
                 value={value}
                 onChange={onChangeHandler}
