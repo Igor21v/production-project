@@ -1,0 +1,2 @@
+Почему не срабатывает useEffect когда убираем dispatch из массива зависимостей в App.tsx? Урок 48
+В public api Article указали export type {Article}, зачем прописывать type? Урок 49
