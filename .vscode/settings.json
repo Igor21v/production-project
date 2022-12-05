@@ -20,7 +20,7 @@
                     "template": "SCSS"
                 },
                 {
-                    "fileName": "<FTName>/<FTName>.storybook.tsx",
+                    "fileName": "<FTName>/<FTName>.stories.tsx",
                     "template": "STORYBOOK"
                 }
             ]
@@ -60,7 +60,7 @@
             "import { <FTName> } from './<FTName>';",
             "",
             "export default {",
-            "    title: 'entities/ProfilePage',",
+            "    title: 'new/<FTName>',",
             "    component: <FTName>,",
             "    argTypes: {",
             "        backgroundColor: { control: 'color' },",
