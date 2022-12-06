@@ -11,19 +11,19 @@ export interface ArticleBlockBase {
 
 export interface ArticleCodeBlock extends ArticleBlockBase {
     type: ArticleBlockType.CODE;
-    code: String;
+    code: string;
 }
 
 export interface ArticleImageBlock extends ArticleBlockBase {
     type: ArticleBlockType.IMAGE;
-    src: String;
-    title: String;
+    src: string;
+    title: string;
 }
 
 export interface ArticleTextBlock extends ArticleBlockBase {
     type: ArticleBlockType.TEXT;
-    paragraphs: String[];
-    title?: String;
+    paragraphs: string[];
+    title?: string;
 }
 
 export type ArticleBlock = ArticleCodeBlock | ArticleImageBlock | ArticleTextBlock;
