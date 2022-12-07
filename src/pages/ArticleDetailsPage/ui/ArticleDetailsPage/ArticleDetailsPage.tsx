@@ -28,13 +28,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
         <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
             <ArticleDetails id={id} />
             <Text title={t('Comments')} className={cls.commentTitle} />
-            <CommentList comments={[
-                {
-                    id: '1',
-                    text,
-                },
-            ]}
-            />
+            <CommentList comments={[]} />
         </div>
     );
 };
