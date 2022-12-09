@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -93,13 +95,13 @@
       "id": "2",
       "text": "some comment 2",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2"
     },
     {
       "id": "3",
       "text": "some comment 3",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2"
     }
   ],
   "users": [
@@ -118,14 +120,28 @@
       "avatar": "https://yobte.ru/uploads/posts/2019-11/programmist-42-foto-34.jpg"
     }
   ],
-  "profile": {
-    "first": "Игорь7",
-    "lastname": "Бондаренко123",
-    "age": 2,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "",
-    "username": "admin",
-    "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Игорь",
+      "lastname": "Бондаренко",
+      "age": 2,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "",
+      "username": "admin",
+      "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
+    },
+    {
+      "id": "2",
+      "first": "Владимир",
+      "lastname": "Сидоренко",
+      "age": 50,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "",
+      "username": "user",
+      "avatar": "https://yobte.ru/uploads/posts/2019-11/programmist-42-foto-34.jpg"
+    }
+  ]
 }
