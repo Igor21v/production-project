@@ -1,33 +1,33 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { <FTName | capitalcase>, <FTName | capitalcase>Schema } from '../types/<FTName | lowercasefirstchar>';
+import { <FTName | capitalize>, <FTName | capitalize>Schema } from '../types/<FTName | lowercasefirstchar>';
 
-const initialState: <FTName | sentencecase>Schema = {
+const initialState: <FTName|capitalize>Schema = {
     error: undefined,
-    data: undefined,
+    isLoading: false,
 };
 
-export const profileSlice = createSlice({
-    name: 'profile',
+export const <FTName|lowercasefirstchar>Slice = createSlice({
+    name: '<FTName|lowercasefirstchar>',
     initialState,
     reducers: {
 
     },
     extraReducers: (builder) => {
         builder
-            .addCase(.pending, (state) => {
+            .addCase(fetch<FTName|capitalize>.pending, (state) => {
                 state.error = undefined;
                 state.isLoading = true;
             })
-            .addCase(.fulfilled, (state, action: PayloadAction<<FTName | sentencecase>>) => {
+            .addCase(fetch<FTName|capitalize>.fulfilled, (state, action: PayloadAction<<FTName | capitalize>>) => {
                 state.isLoading = false;
                 state.data = action.payload;
             })
-            .addCase(.rejected, (state, action) => {
+            .addCase(fetch<FTName|capitalize>.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
-            })
+            });
     },
 });
 
-export const { actions: profileActions } = profileSlice;
-export const { reducer: profileReducer } = profileSlice;
+export const { actions: <FTName|lowercasefirstchar>Actions } = <FTName|lowercasefirstchar>Slice;
+export const { reducer: <FTName|lowercasefirstchar>Reducer } = <FTName|lowercasefirstchar>Slice;
