@@ -29,15 +29,21 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
     const onCommentTextChange = useCallback((value: string) => {
         dispatch(addCommentFormActions.setText(value));
     }, [dispatch]);
+    const onSendComment = useCallback((value: string) => {
+        dispatch();
+    }, [dispatch]);
     return (
         <DynamicModuleLoader reducers={redusers}>
             <div className={classNames(cls.AddCommentForm, {}, [className])}>
                 <Input
+                    className={cls.input}
                     placeholder={t('Enter text of comment')}
                     value={text}
                     onChange={onCommentTextChange}
                 />
-                <Button>{t('Send')}</Button>
+                <Button onClick={onSendComment}>
+                    {t('Send')}
+                </Button>
             </div>
         </DynamicModuleLoader>
 
