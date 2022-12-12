@@ -19,7 +19,7 @@ export enum AppRoutes {
     NOT_FOUND = 'not_found',
 }
 
-export const RouterPath: Record<AppRoutes, string> = {
+export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.MAIN]: '/',
     [AppRoutes.ABOUT]: '/about',
     [AppRoutes.PROFILE]: '/profile/', // +id
@@ -30,30 +30,30 @@ export const RouterPath: Record<AppRoutes, string> = {
 
 export const routeConfig: Record<AppRoutes, AppRouteProps> = {
     [AppRoutes.MAIN]: {
-        path: RouterPath.main,
+        path: RoutePath.main,
         element: <MainPage />,
     },
     [AppRoutes.ABOUT]: {
-        path: RouterPath.about,
+        path: RoutePath.about,
         element: <AboutPage />,
     },
     [AppRoutes.PROFILE]: {
-        path: `${RouterPath.profile}:id`,
+        path: `${RoutePath.profile}:id`,
         element: <ProfilePage />,
         authOnly: true,
     },
     [AppRoutes.ARTICLES]: {
-        path: RouterPath.articles,
+        path: RoutePath.articles,
         element: <ArticlesPage />,
         authOnly: true,
     },
     [AppRoutes.ARTICLE_DETAILS]: {
-        path: `${RouterPath.articl_details}:id`,
+        path: `${RoutePath.articl_details}:id`,
         element: <ArticleDetailPage />,
         authOnly: true,
     },
     [AppRoutes.NOT_FOUND]: {
-        path: RouterPath.not_found,
+        path: RoutePath.not_found,
         element: <NotFoundPage />,
     },
 };
