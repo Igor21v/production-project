@@ -3,7 +3,7 @@ import { ThunkConfig } from 'app/providers/StoreProvider';
 import { getArticleDetailsData } from 'entities/Article';
 import { Comment } from 'entities/Comment';
 import { getUserAuthData } from 'entities/User';
-import { fetchCommentsByArticleId } from '../fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { articleDetailsCommentsAction } from '../../slices/articleDetailsCommentsSlice';
 
 export const addCommentForArticle = createAsyncThunk<Comment, string, ThunkConfig<string>>(
     'articleDetails/addCommentForArticle',
@@ -30,7 +30,14 @@ export const addCommentForArticle = createAsyncThunk<Comment, string, ThunkConfi
             if (!response.data) {
                 throw new Error();
             }
-            dispatch(fetchCommentsByArticleId(article.id));
+            const newComment: Comment = {
+                id: response.data.id,
+                user: userData,
+                text: response.data.text,
+            };
+
+            dispatch(articleDetailsCommentsAction.addComment(newComment));
+
             return response.data;
         } catch (error) {
             return rejectWithValue('error');
