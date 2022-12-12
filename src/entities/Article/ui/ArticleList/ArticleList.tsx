@@ -20,12 +20,13 @@ export const ArticleList = memo((props: ArticleListProps) => {
         view = ArticleView.SMALL,
     } = props;
     const { t } = useTranslation();
-    const renderArticle = (article: Article) => {
+    const renderArticle = (article: Article) => (
         <ArticleListItem
             article={article}
             view={view}
-        />;
-    };
+            key={article.id}
+        />
+    );
     return (
         <div className={classNames(cls.ArticleList, {}, [className])}>
             {articles.length > 0
