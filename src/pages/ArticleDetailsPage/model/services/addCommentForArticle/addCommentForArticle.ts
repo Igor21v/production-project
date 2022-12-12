@@ -1,14 +1,13 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
-import { getArticleDetailsData } from 'entities/Article/model/selectors/articleDetails';
+import { getArticleDetailsData } from 'entities/Article';
 import { Comment } from 'entities/Comment';
-import { getUserAuthData, User, userActions } from 'entities/User';
-import { USER_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
-import { getAddCommentFormText } from '../../selectors/addCommentForm';
+import { getUserAuthData } from 'entities/User';
+import { fetchCommentsByArticleId } from '../fetchCommentsByArticleId/fetchCommentsByArticleId';
 
-export const loginByUsername = createAsyncThunk<Comment, void, ThunkConfig<string>>(
-    'addComment/sendComment',
-    async (_, thunkApi) => {
+export const addCommentForArticle = createAsyncThunk<Comment, string, ThunkConfig<string>>(
+    'articleDetails/addCommentForArticle',
+    async (text, thunkApi) => {
         const {
             extra,
             dispatch,
@@ -16,7 +15,6 @@ export const loginByUsername = createAsyncThunk<Comment, void, ThunkConfig<strin
             getState,
         } = thunkApi;
         const userData = getUserAuthData(getState());
-        const text = getAddCommentFormText(getState());
         const article = getArticleDetailsData(getState());
 
         if (!userData || !text || !article) {
@@ -24,7 +22,7 @@ export const loginByUsername = createAsyncThunk<Comment, void, ThunkConfig<strin
         }
 
         try {
-            const response = await extra.api.post<Comment>('/comment', {
+            const response = await extra.api.post<Comment>('/comments', {
                 articleId: article.id,
                 userId: userData.id,
                 text,
@@ -32,8 +30,7 @@ export const loginByUsername = createAsyncThunk<Comment, void, ThunkConfig<strin
             if (!response.data) {
                 throw new Error();
             }
-            localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data));
-            dispatch(userActions.setAuthData(response.data));
+            dispatch(fetchCommentsByArticleId(article.id));
             return response.data;
         } catch (error) {
             return rejectWithValue('error');
