@@ -15,13 +15,16 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     const { t } = useTranslation('articles');
     const article = {
         id: '1',
-        title: 'Javascript news',
+        title: 'Javascript news 1233123 SAXZF',
         subtitle: 'Что нового в JS за 2022 год?',
         img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
         views: 1022,
         createdAt: '26.02.2022',
         type: [
             'IT',
+            'SCIENCE',
+            'POLITICS',
+            'ECONOMICS',
         ],
         blocks: [
             {

@@ -6,11 +6,23 @@
 
 .SMALL {
     width: 230px;
+    transition: 0.2s;
 
-    .card {
-        padding: 15px;
-        border-radius: 12px;
-        background: var(--card-bg);
+    .date {
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: none;
+    }
+
+    &:hover {
+        opacity: 0.8;
+        transform: scale(1.01);
+        cursor: pointer;
+
+        .date {
+            display: block;
+        }
     }
 
     .imageWrapper {
@@ -24,19 +36,17 @@
         height: 200px;
     }
 
-    .date {
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-
     .infoWrapper {
         display: flex;
         align-items: center;
+        margin-top: 8px;
     }
 
-    .types {
-        margin-top: 8px;
+    .types p {
+        width: 115px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .views {
@@ -46,5 +56,12 @@
 
     .title {
         margin-top: 8px;
+    }
+
+    .title p {
+        width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }
