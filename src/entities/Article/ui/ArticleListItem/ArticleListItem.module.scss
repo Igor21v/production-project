@@ -30,6 +30,12 @@
     .fotter {
         display: flex;
         align-items: center;
+        margin-top: 16px;
+    }
+
+    .textBlock {
+        max-height: 200px;
+        overflow-y: hidden;
     }
 }
 
