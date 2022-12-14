@@ -8,7 +8,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
     children: ReactNode;
 }
 
-export const Card = memo((props: CardProps) => {
+export const Card = (props: CardProps) => {
     const {
         className,
         children,
@@ -23,4 +23,4 @@ export const Card = memo((props: CardProps) => {
             {children}
         </div>
     );
-});
+};
