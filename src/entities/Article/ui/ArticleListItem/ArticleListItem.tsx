@@ -45,10 +45,9 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             (block) => block.type === ArticleBlockType.TEXT,
         ) as ArticleTextBlock;
         return (
-            <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
-                <Card className={cls.card}>
+            <div className={classNames('', {}, [className, cls[view]])}>
+                <Card>
                     <div className={cls.header}>
-                        {console.log(article.user.avatar)}
                         <Avatar size={30} src={article.user.avatar} />
                         <Text text={article.user.username} className={cls.username} />
                         <Text text={article.createdAt} className={cls.data} />
@@ -71,7 +70,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     }
 
     return (
-        <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
+        <div className={classNames('', {}, [className, cls[view]])}>
             <Card onClick={onOpenArticle}>
                 <div className={cls.imageWrapper}>
                     <img src={article.img} className={cls.img} alt={article.title} />
