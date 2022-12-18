@@ -10,7 +10,9 @@ export const <FTName|lowercasefirstchar>Slice = createSlice({
     name: '<FTName|lowercasefirstchar>',
     initialState,
     reducers: {
-
+        : (state, { payload }: PayloadAction<>) => {
+            state. = payload;
+        },
     },
     extraReducers: (builder) => {
         builder
