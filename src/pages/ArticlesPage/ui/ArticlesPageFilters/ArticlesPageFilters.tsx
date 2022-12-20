@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, useCallback } from 'react';
 import {
-    ArticleSortField, ArticleSortSelector, ArticleView, ArticleViewSelector,
+    ArticleSortField, ArticleSortSelector, ArticleType, ArticleTypeTabs, ArticleView, ArticleViewSelector,
 } from 'entities/Article';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
@@ -17,6 +17,7 @@ import {
     getArticlesPageOrder,
     getArticlesPageSearch,
     getArticlesPageSort,
+    getArticlesPageType,
     getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
@@ -35,6 +36,7 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
     const sort = useSelector(getArticlesPageSort);
     const order = useSelector(getArticlesPageOrder);
     const search = useSelector(getArticlesPageSearch);
+    const type = useSelector(getArticlesPageType);
     const fetchData = useCallback(() => {
         dispatch(fetchArticlesList({ replace: true }));
     }, [dispatch]);
@@ -59,6 +61,12 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
         dispatch(articlesPageActions.setPage(1));
         debouncedFetchData();
     }, [dispatch, debouncedFetchData]);
+    const onChangeType = useCallback((value: ArticleType) => {
+        dispatch(articlesPageActions.setType(value));
+        dispatch(articlesPageActions.setPage(1));
+        fetchData();
+    }, [dispatch, fetchData]);
+
     return (
         <div className={classNames('', {}, [className])}>
             <div className={cls.sortWrapper}>
@@ -77,6 +85,11 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
                     value={search}
                 />
             </Card>
+            <ArticleTypeTabs
+                onChangeType={onChangeType}
+                value={type}
+                className={cls.tabs}
+            />
         </div>
     );
 });

@@ -4,7 +4,7 @@ import { memo, ReactNode, useCallback } from 'react';
 import cls from './Tabs.module.scss';
 import { Card, CardTheme } from '../Card/Card';
 
-interface TabItem {
+export interface TabItem {
     value: string;
     content: ReactNode;
 }
