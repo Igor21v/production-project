@@ -13,18 +13,18 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Page } from 'widgets/Page/Page';
 import {
-    articleDetailsRecommendationReducer,
     getArticleRecommendations,
 } from '../../model/slices/ArticleDetailsRecommendationSlice';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
-import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
+import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
 import cls from './ArticleDetailsPage.module.scss';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { getArticleRecommendationsIsLoading } from '../../model/selectors/recomendations';
 import {
     fetchArticleRecommendations,
 } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
+import { articleDetailsPageReducer } from '../../model/slices';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -39,8 +39,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const reducers: ReducersList = {
-        articleDetailsComments: articleDetailsCommentsReducer,
-        articleDetailsRecommendation: articleDetailsRecommendationReducer,
+        articleDetailsPage: articleDetailsPageReducer,
     };
     const comments = useSelector(getArticleComments.selectAll);
     const recommendations = useSelector(getArticleRecommendations.selectAll);
@@ -75,6 +74,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
                     articles={recommendations}
                     isLoading={recommendationsIsLoading}
                     className={cls.recommendations}
+                    target="_blank"
                 />
                 <Text size={TextSize.L} title={t('Comments')} className={cls.commentTitle} />
                 <AddCommentForm onSendComment={onSendComment} />
