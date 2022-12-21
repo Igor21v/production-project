@@ -5,6 +5,7 @@ import {
 } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { Article } from 'entities/Article';
+import { fetchArticleRecommendations } from '../services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { ArticleDetailsRecommendationSchema } from '../types/ArticleDetailsRecommendationSchema';
 
 const recommendationsAdapter = createEntityAdapter<Article>({
@@ -12,7 +13,7 @@ const recommendationsAdapter = createEntityAdapter<Article>({
 });
 
 export const getArticleRecommendations = recommendationsAdapter.getSelectors<StateSchema>(
-    (state) => state.articleDetailsComments || recommendationsAdapter.getInitialState(),
+    (state) => state.articleDetailsRecommendation || recommendationsAdapter.getInitialState(),
 );
 
 const ArticleDetailsRecommendationSlice = createSlice({
@@ -30,15 +31,15 @@ const ArticleDetailsRecommendationSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
-            .addCase(fetchCommentsByArticleId.pending, (state) => {
+            .addCase(fetchArticleRecommendations.pending, (state) => {
                 state.error = undefined;
                 state.isLoading = true;
             })
-            .addCase(fetchCommentsByArticleId.fulfilled, (state, action: PayloadAction<Article[]>) => {
+            .addCase(fetchArticleRecommendations.fulfilled, (state, action) => {
                 state.isLoading = false;
-                commentsAdapter.setAll(state, action.payload);
+                recommendationsAdapter.setAll(state, action.payload);
             })
-            .addCase(fetchCommentsByArticleId.rejected, (state, action) => {
+            .addCase(fetchArticleRecommendations.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
             });

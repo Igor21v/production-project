@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { <FTName | capitalize>, <FTName | capitalize>Schema } from '../types/<FTName | lowercasefirstchar>';
+import { <FTName | capitalize>Schema } from '../types/<FTName | lowercasefirstchar>';
 
 const initialState: <FTName|capitalize>Schema = {
     error: undefined,
@@ -20,7 +20,7 @@ export const <FTName|lowercasefirstchar>Slice = createSlice({
                 state.error = undefined;
                 state.isLoading = true;
             })
-            .addCase(fetch<FTName|capitalize>.fulfilled, (state, action: PayloadAction<<FTName | capitalize>>) => {
+            .addCase(fetch<FTName|capitalize>.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.data = action.payload;
             })
