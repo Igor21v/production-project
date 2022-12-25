@@ -16,7 +16,6 @@ interface PageProps {
     className?: string;
     children: ReactNode;
     onScrollEnd?: () => void;
-    setIsIntersecting?: (value: boolean) => void;
 }
 
 export const Page = (props: PageProps) => {
@@ -24,8 +23,6 @@ export const Page = (props: PageProps) => {
         className,
         children,
         onScrollEnd,
-        setIsIntersecting,
-
     } = props;
     const dispatch = useAppDispatch();
     const { pathname } = useLocation();
