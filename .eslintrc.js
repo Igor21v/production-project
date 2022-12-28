@@ -22,6 +22,7 @@ module.exports = {
         '@typescript-eslint',
         'i18next',
         'react-hooks',
+        'igor21v',
     ],
     rules: {
         'linebreak-style': ['warn', 'windows'],
@@ -54,6 +55,8 @@ module.exports = {
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
         'arrow-body-style': 'off',
+        'igor21v/path-checker': 'error',
+        'consistent-return': 'warn',
     },
     globals: {
         __IS_DEV__: true,

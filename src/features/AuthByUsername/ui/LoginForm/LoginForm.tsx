@@ -1,4 +1,3 @@
-import { loginActions, loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 import { memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector, useStore } from 'react-redux';
@@ -7,8 +6,9 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { getLoginPassword } from 'features/AuthByUsername/model/selectors/getLoginIsPassword/getLoginPassword';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { loginActions, loginReducer } from '../../model/slice/loginSlice';
+import { getLoginPassword } from '../../model/selectors/getLoginIsPassword/getLoginPassword';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import cls from './LoginForm.module.scss';
 import { getLoginUsername } from '../../model/selectors/getLoginIsUsername/getLoginUsername';
