@@ -8,8 +8,8 @@ import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { HStack } from 'shared/ui/Stack/HStack/HStack';
 import { Text } from 'shared/ui/Text/Text';
-import cls from './ProfilePageHeader.module.scss';
 
 interface ProfilePageHeaderProps {
     className?: string;
@@ -35,37 +35,32 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
         dispatch(updateProfileData());
     }, [dispatch]);
     return (
-        <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+        <HStack justify="between" max className={classNames('', {}, [className])}>
             <Text title={t('Profile')} />
-            {canEdit && (
-                <div className={cls.btnsWrapper}>
-                    {readOnly ? (
+            {canEdit
+                && readOnly ? (
+                    <Button
+                        theme={ButtonTheme.OUTLINE}
+                        onClick={onEdit}
+                    >
+                        {t('Edit')}
+                    </Button>
+                ) : (
+                    <HStack gap="8">
+                        <Button
+                            theme={ButtonTheme.OUTLINE_RED}
+                            onClick={onCancelEdit}
+                        >
+                            {t('Cancel')}
+                        </Button>
                         <Button
                             theme={ButtonTheme.OUTLINE}
-                            className={cls.editBtn}
-                            onClick={onEdit}
+                            onClick={onSave}
                         >
-                            {t('Edit')}
+                            {t('Save')}
                         </Button>
-                    ) : (
-                        <>
-                            <Button
-                                theme={ButtonTheme.OUTLINE_RED}
-                                className={cls.editBtn}
-                                onClick={onCancelEdit}
-                            >
-                                {t('Cancel')}
-                            </Button>
-                            <Button
-                                theme={ButtonTheme.OUTLINE}
-                                onClick={onSave}
-                            >
-                                {t('Save')}
-                            </Button>
-                        </>
-                    )}
-                </div>
-            )}
-        </div>
+                    </HStack>
+                )}
+        </HStack>
     );
 };
