@@ -2,3 +2,4 @@
 2. 34 lession 27:00 at the text component was deleted styles Primary and main style cls.Text
 3. At storybook/webpack.config.ts exclude @ts-ignore, last lession module five.
 4. At buildLoaders.ts no added i18next-extract plagin
+5. 67 Не стал переводить селектор страны в профиле в новый компонент ListBox так как хочу в будеющем от него избавиться и от библиотеки headless
