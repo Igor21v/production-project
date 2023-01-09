@@ -46,9 +46,9 @@ export const ProfileCard = (props: ProfileCardProps) => {
     const { t } = useTranslation('profile');
     if (isLoading) {
         return (
-            <div className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
+            <HStack justify="center" max className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
                 <Loader />
-            </div>
+            </HStack>
         );
     }
 

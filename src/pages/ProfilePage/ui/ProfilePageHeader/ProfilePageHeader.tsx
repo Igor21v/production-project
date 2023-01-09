@@ -37,30 +37,34 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
     return (
         <HStack justify="between" max className={classNames('', {}, [className])}>
             <Text title={t('Profile')} />
-            {canEdit
-                && readOnly ? (
-                    <Button
-                        theme={ButtonTheme.OUTLINE}
-                        onClick={onEdit}
-                    >
-                        {t('Edit')}
-                    </Button>
-                ) : (
-                    <HStack gap="8">
-                        <Button
-                            theme={ButtonTheme.OUTLINE_RED}
-                            onClick={onCancelEdit}
-                        >
-                            {t('Cancel')}
-                        </Button>
-                        <Button
-                            theme={ButtonTheme.OUTLINE}
-                            onClick={onSave}
-                        >
-                            {t('Save')}
-                        </Button>
-                    </HStack>
-                )}
+            {canEdit && (
+                <div>
+                    {readOnly
+                        ? (
+                            <Button
+                                theme={ButtonTheme.OUTLINE}
+                                onClick={onEdit}
+                            >
+                                {t('Edit')}
+                            </Button>
+                        ) : (
+                            <HStack gap="8">
+                                <Button
+                                    theme={ButtonTheme.OUTLINE_RED}
+                                    onClick={onCancelEdit}
+                                >
+                                    {t('Cancel')}
+                                </Button>
+                                <Button
+                                    theme={ButtonTheme.OUTLINE}
+                                    onClick={onSave}
+                                >
+                                    {t('Save')}
+                                </Button>
+                            </HStack>
+                        )}
+                </div>
+            )}
         </HStack>
     );
 };
