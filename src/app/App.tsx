@@ -10,7 +10,6 @@ export default function App() {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(userActions.initAuthData());
-        console.log('dispatch USERACTION');
     }, [dispatch]);
     const inited = useSelector(getUserInited);
     return (

@@ -60,6 +60,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
             <div
                 key={key}
                 style={style}
+                className={cls.row}
             >
                 { items }
             </div>

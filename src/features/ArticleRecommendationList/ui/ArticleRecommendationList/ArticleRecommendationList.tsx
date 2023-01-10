@@ -5,7 +5,6 @@ import { VStack } from 'shared/ui/Stack';
 import { ArticleList } from 'entities/Article';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { rtkApi } from 'shared/api/rtkApi';
-import { build } from '@reduxjs/toolkit/dist/query/core/buildMiddleware/cacheLifecycle';
 
 interface ArticleRecommendationListProps {
     className ?: string;
@@ -31,12 +30,15 @@ export const ArticleRecommendationList = memo((props: ArticleRecommendationListP
         className,
     } = props;
     const { t } = useTranslation('articleDetails');
-    const { isLoading, data } = useArticleRecommendationsList(3);
+    const { isLoading, data: articles, error } = useArticleRecommendationsList(3);
+    if (isLoading || error) {
+        return null;
+    }
     return (
         <VStack gap="8" className={classNames('', {}, [className])}>
             <Text size={TextSize.L} title={t('We recommend')} />
             <ArticleList
-                articles={[]}
+                articles={articles}
                 target="_blank"
             />
         </VStack>
