@@ -11,6 +11,7 @@ import { Text, TextSize } from 'shared/ui/Text/Text';
 import { AddCommentForm } from 'features/addCommentForm';
 import { Page } from 'widgets/Page/Page';
 import { VStack } from 'shared/ui/Stack';
+import { ArticleRecommendationList } from 'features/ArticleRecommendationList';
 import { getArticleRecommendationsIsLoading } from '../../model/selectors/recomendations';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import {
@@ -41,12 +42,9 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
         articleDetailsPage: articleDetailsPageReducer,
     };
     const comments = useSelector(getArticleComments.selectAll);
-    const recommendations = useSelector(getArticleRecommendations.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
-    const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading);
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
-        dispatch(fetchArticleRecommendations());
     });
     const onSendComment = useCallback((text: string) => {
         dispatch(addCommentForArticle(text));
@@ -65,13 +63,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
                 <VStack gap="16" max>
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
-                    <Text size={TextSize.L} title={t('We recommend')} className={cls.commentTitle} />
-                    <ArticleList
-                        articles={recommendations}
-                        isLoading={recommendationsIsLoading}
-                        className={cls.recommendations}
-                        target="_blank"
-                    />
+                    <ArticleRecommendationList />
                     <Text size={TextSize.L} title={t('Comments')} className={cls.commentTitle} />
                     <AddCommentForm onSendComment={onSendComment} />
                     <CommentList
