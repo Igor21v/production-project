@@ -1,4 +1,5 @@
 {
     "name": "slice",
-    "omitParentDirectory": true
+    "omitParentDirectory": true,
+    "customVariables": ["storybookParent=>entities"]
 }

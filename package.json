@@ -22,7 +22,8 @@
     "test:ui:report": "npm-run-all --continue-on-error storybook:build test:ui:ci test:ui:json test:ui:html",
     "test:ui:json": "node scripts/generate-visual-json-report.js",
     "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
-    "check": "npm-run-all lint:ts lint:scss test:unit storybook:build test:ui:ci build:prod"
+    "check": "npm-run-all lint:ts lint:scss test:unit storybook:build test:ui:ci build:prod",
+    "generate:slice": "node ./scripts/createSlice/index.js"
   },
   "keywords": [],
   "author": "",
