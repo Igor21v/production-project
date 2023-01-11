@@ -17,5 +17,6 @@
   "Incorrect country": "Incorrect country",
   "Name and lastname is required": "Name and lastname is required",
   "No data": "No data",
-  "Server error": "Server error"
+  "Server error": "Server error",
+  "Profile not found": "Profile not found"
 }

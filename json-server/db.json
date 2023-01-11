@@ -653,10 +653,10 @@
     {
       "id": "1",
       "first": "Игорь1",
-      "lastname": "Бондаренко",
+      "lastname": "Бондаренко123",
       "age": 2,
-      "currency": "RUB",
-      "country": "Russia",
+      "currency": "EUR",
+      "country": "Kazakhstan",
       "city": "",
       "username": "admin",
       "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"

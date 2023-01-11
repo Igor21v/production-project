@@ -17,5 +17,6 @@
   "Incorrect country": "Некорректный регион",
   "Name and lastname is required": "Имя и фамилия обязательны",
   "No data": "Данные не указаны",
-  "Server error": "Ошибка на сервере"
+  "Server error": "Ошибка на сервере",
+  "Profile not found": "Профиль не найден"
 }
