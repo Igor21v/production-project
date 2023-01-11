@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { EditableProfileCardHeader } from './EditableProfileCardHeader';
 
 export default {
-    title: 'features/EditableProfileCardHeader',
+    title: 'features/EditableProfileCard/EditableProfileCardHeader',
     component: EditableProfileCardHeader,
     argTypes: {
         backgroundColor: { control: 'color' },
