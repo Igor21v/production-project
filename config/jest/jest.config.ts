@@ -10,7 +10,7 @@ export default {
     globals: {
         __IS_DEV__: true,
         __API__: '',
-        __PROJECT: 'jest',
+        __PROJECT__: 'jest',
     },
     // Automatically clear mock calls, instances and results before every test
     clearMocks: true,
@@ -52,7 +52,7 @@ export default {
         ['jest-html-reporters', {
             publicPath: '<rootDir>/reports/unit',
             filename: 'report.html',
-            openReport: true,
+            // openReport: true,
             inlineSource: true,
 
         }],
